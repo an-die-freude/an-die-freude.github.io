@@ -83,7 +83,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -152,9 +152,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
 </div>
@@ -191,7 +196,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/15/computer-networking-chapter-1/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/01/computer-networking-chapter-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -209,7 +214,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/06/15/computer-networking-chapter-1/" class="post-title-link" itemprop="url">《计算机网络-自顶向下》第一章 计算机网络和互联网</a>
+          <a href="/2022/06/01/computer-networking-chapter-3/" class="post-title-link" itemprop="url">《计算机网络-自顶向下》第三章 传输层</a>
         </h2>
 
         <div class="post-meta-container">
@@ -220,14 +225,23 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-06-15 00:00:00" itemprop="dateCreated datePublished" datetime="2022-06-15T00:00:00+08:00">2022-06-15</time>
+      <time title="创建时间：2022-06-01 00:00:00" itemprop="dateCreated datePublished" datetime="2022-06-01T00:00:00+08:00">2022-06-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-07-16 23:20:20" itemprop="dateModified" datetime="2022-07-16T23:20:20+08:00">2022-07-16</time>
+      <time title="修改时间：2022-05-02 00:00:00" itemprop="dateModified" datetime="2022-05-02T00:00:00+08:00">2022-05-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/network/" itemprop="url" rel="index"><span itemprop="name">网络</span></a>
+        </span>
     </span>
 
   
@@ -237,14 +251,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>3.3k</span>
+      <span>11k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>10 分钟</span>
     </span>
 </div>
 
@@ -255,21 +269,27 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h4 id="1-1-互联网"><a href="#1-1-互联网" class="headerlink" title="1.1 互联网"></a>1.1 互联网</h4><p>与互联网连接的设备称为<strong>主机</strong><SUP>【因为容纳&#x2F;运行应用程序】</SUP>或<strong>端系统</strong><SUP>【因为位于互联网的边缘】</SUP>。</p>
-<p>主机分为<strong>客户端</strong>和<strong>服务器</strong>。</p>
-<p>端系统彼此交换<strong>报文</strong>。端系统通过<strong>通信链路</strong>和<strong>分组交换机</strong>连接到一起。</p>
-<p>通信链路的<strong>传输速度</strong>的单位是bit&#x2F;s。一台端系统向另一台端系统发送报文时，发送端将报文分段并为每段加上首部字节，由此形成的信息包称为<strong>分组</strong>。</p>
-<p>交换机主要包括<strong>路由器</strong>和<strong>链路层交换机</strong>。链路层交换机通常用于接入网中，而路由器通常用于网络核心中。从发送端系统到接收端系统，一个分组所经历的一系列通信链路和分组交换机称为通过该网络的<strong>路径</strong>。</p>
-<p>端系统通过<strong>互联网服务提供商</strong>接入互联网。</p>
-<p>端系统、分组交换机和其他互联网部件都要运行一系列<strong>协议</strong>，这些协议控制互联网中信息的接收和发送。<strong>IP</strong>协议定义了在路由器和端系统之间发送和接收的分组格式。互联网的主要协议统称为<strong>TCP&#x2F;IP</strong>。</p>
-<p><strong>协议</strong>定义了两个或多个通信实体之间交换的报文的格式和顺序，以及发送&#x2F;接收一条报文或其他事件所采取的动作。</p>
-<p><strong>互联网标准</strong>由<strong>互联网工程任务组</strong>研发，其标准文档称为<strong>请求评论</strong>。</p>
-<p>应用程序涉及多个相互交换数据的端系统称为<strong>分布式应用程序</strong>。</p>
-<p>与互联网相连的端系统提供了一个<strong>套接字接口</strong>，该接口规定了运行在端系统上的程序请求互联网基础设施向运行在另一个端系统上的特定目的地程序交付数据的方式。</p>
-<p>ICANN负责分配IP地址，分配AS号，管理DNS根服务器，分配域名以及解决域名纷争。</p>
+          <p>网络层提供了主机之间的逻辑通信，传输层提供不同主机的进程之间的逻辑通信。</p>
+<p>运输层的<strong>多路复用</strong>与<strong>多路分解</strong>指将主机间交付扩展到进程间交换。</p>
+<p>﹡多路复用指在不同套接字中收集数据块并为每个数据块封装上首部信息从而生成报文段再将报文段传递到网络层。</p>
+<p>﹡多路分解指将传输层报文段中的数据交付到正确的套接字。</p>
+<p>多路复用需要<strong>源端口号字段</strong><SUP>套接字的唯一标识符</SUP>和<strong>目的端口号字段</strong><SUP>报文段中标识目标套接字的字段</SUP>。</p>
+<p>端口号的长度是16位。0~1023之间的端口称为<strong>周知端口号</strong>。</p>
+<p><strong>序号</strong>用于为从发送端流向接收端的分组按序编号。</p>
+<p><strong>校验和</strong>用于分组的差错检测。</p>
+<p>在信道中分组重新排序是可能的，可以表现为序号不存在于发送端和接收端的窗口中的分组&#x2F;ACK的副本可能会出现。信道可以看成用来缓存分组，并在<span style="background-color: yellow">任意时刻</span>释放这些分组。</p>
+<p>通过设置分组的TTL来实现序号在发送端确定不会出现之前不会再被使用。</p>
+<h4 id="3-1-UDP"><a href="#3-1-UDP" class="headerlink" title="3.1 UDP"></a>3.1 UDP</h4><p>UDP在发送报文段前传输层实体间没有握手，故UDP被称为<span style="background-color: yellow">无连接</span>的。</p>
+<p><img src="/2022/06/01/computer-networking-chapter-3/udp_segment_format.png" alt="udp_segment_format"></p>
+<p>UDP首部有四个字段，每个字段由2字节构成。</p>
+<p>﹡长度字段即报文段中的字节数(首部+应用数据)。</p>
+<p><img src="/2022/06/01/computer-networking-chapter-3/checksum_of_udp.png" alt="checksum_of_udp"></p>
+<p>伪首部包括源IP地址、目的IP地址、填充0的保留字段、传输层协议号以及报文长度。</p>
+<p>发送端在计算校验和时需要先加上伪首部并将校验和字段置零，将伪首部、首部和应用数据转换成16位二进制(不足部分填充零)并求和，求和时需要回卷(如果进位到第17位则将结果加一)，将和取反得到校验和，发送端将设置校验和并去掉伪首部。接收端计算校验和方式类似于发送端(不需要将校验和置零)，最后结果全为一则说明数据无误，否则警告。</p>
+<p>由于无法确保链路的可靠和内存中的差错检测，UDP在端到端基础上的传输层进行差错检测，这种设计被称为<strong>端到端原则</strong>，即同样功能的实现成本在较低级别相比较高级别可能较高。</p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2022/06/15/computer-networking-chapter-1/#more" rel="contents">
+              <a class="btn" href="/2022/06/01/computer-networking-chapter-3/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -292,6 +312,9 @@
 
 
 
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 </div>
   </main>
