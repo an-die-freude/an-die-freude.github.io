@@ -1751,8 +1751,8 @@ D\times 2^r \oplus R&amp;=nG\\
 D\times 2^r\oplus R\oplus R&amp;=nG\oplus R\\
 D\times 2^r&amp;=nG \oplus R\\
 \end{align}
-\]</span> 　　显然，<span class="math inline">\(R= D\times 2^r \pmod{
-G}\)</span>。</p>
+\]</span> 　　显然，<span class="math inline">\(R= (D\times 2^r) \bmod
+G\)</span>。</p>
 <p>　　CRC能检测出奇数比特的差错，而且CRC能检测出小于<span
 class="math inline">\(r+1\)</span>位的差错，在适当的假设下还可以以<span
 class="math inline">\(1-\frac{r}{2}\)</span>的概率检测出大于<span
